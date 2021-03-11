@@ -1,0 +1,28 @@
+{% extends "baselayout/base.html" %}
+
+{% block content %}
+
+<div class="head">
+    <h1>จำนวนผู้ติดเชื้อทั้งหมดในประเทศไทย</h1>
+</div>
+
+<div class="covid">
+    <div class="cases">
+        <h1>ผู้ติดเชื้อสะสม<br>{{ covid.cases }}</h1>
+    </div>
+    <div class="recover">
+        <div class="content re">หายแล้ว<br>{{ covid.Recovered }}</div>
+        <div class="content ho">กำลังรักษา<br>{{ covid.Hospitalized }}</div>
+        <div class="content di ">เสียชีวิต<br>{{ covid.Died }}</div>
+    </div>
+</div>
+<div class="head">
+    <h2>กราฟแสดงผู้ติดเชื้อสะสมรายวัน</h2>
+</div>
+<div class="praphs" id="div-id">
+    <script>
+        var graphs = {{ plot | safe}};
+        Plotly.plot('div-id', graphs, {});
+    </script>
+</div>
+{% endblock %}

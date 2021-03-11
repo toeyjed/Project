@@ -1,0 +1,13 @@
+{% extends "baselayout/base.html" %}
+
+{% block content %}
+
+
+<div id="div-id">
+    <script>
+        var graphs = {{ plot | safe}};
+        Plotly.plot('div-id', graphs, {});
+    </script>
+</div>
+
+{% endblock %}

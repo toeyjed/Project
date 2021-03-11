@@ -1,0 +1,35 @@
+{% extends "baselayout/base.html" %}
+
+{% block content %}
+<div class="limiter">
+    <div class="container-login">
+        <div class="wrap-login">
+            <form class="loginform" method="POST" action="/signup">
+                <span class="login-title">REGISTER</span>
+                <div class="wrapinput">
+                    <input class="input" type="text" name="username" placeholder="Username">
+                </div>
+                <div class="wrapinput">
+                    <input class="input" type="text" name="firstname" placeholder="FirstName">
+                </div>
+                <div class="wrapinput">
+                    <input class="input" type="text" name="lastname" placeholder="LastName">
+                </div>
+                <div class="wrapinput">
+                    <input class="input" type="email" name="email" placeholder="Email">
+                </div>
+                <div class="wrapinput">
+                    <input class="input" type="password" name="password" placeholder="Password">
+                </div>
+                <div class="container-login100-from-btn">
+                    <button class="login-btn">Sign Up</button>
+                </div>
+                <div class="text-center w-full p-t-115">
+                    <span class="txt1">Have you account?</span>
+                    <a class="txt1 bo1 hov1" href="login">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
