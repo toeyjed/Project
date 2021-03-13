@@ -4,24 +4,22 @@
 
 <div class="head">
     <h3>สถิติข้อมูล COVID 19 ตั้งแต่วันที่ 01/01/2020</h3>
-    <form action="" method="POST" autocomplete="off">
+    <form 7>
         <div>
             Search for :
-            <input type="text" class="form-control" name="tag" id="tag" placeholder="Enter Date" />
+            <input type="text" class="form-control" name="day" id="day" placeholder="Ex.01/01/2020" />
             <input type="submit" value="Search">
         </div>
     </form>
 </div>
 <table>
     <tr>
-
         <th>DATE</th>
         <th>CONFIRM</th>
         <th>RECOVERED</th>
         <th>HOSPITALIZED</th>
         <th>DEATHS</th>
     </tr>
-
     {% for date,confirm, recovered,hospitalized,deaths in mylist %}
     <tr>
         <td>{{ date }}</td>
