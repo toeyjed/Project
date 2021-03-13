@@ -28,14 +28,8 @@ def covid():
 
 @main.route('/news')
 def news():
-    URL = 'https://covid19.th-stat.com/api/open/cases/sum'
-    response = requests.get(URL).json()
-    casesum = ""
-    casesum = {'Province': response['Province']
 
-               }
-
-    return render_template('news.html', casesum=casesum, user=current_user)
+    return render_template('news.html', user=current_user)
 
 
 @main.route('/world')
@@ -67,6 +61,7 @@ def covid_date():
             else:
                 continue
     if not day:
+        day = '01/01/2020'
         for i in range(len(data)):
             data_date = data[i]
             date.append(data_date['Date'])
