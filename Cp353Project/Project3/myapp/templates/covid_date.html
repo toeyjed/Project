@@ -3,10 +3,34 @@
 {% block content %}
 
 <div class="head">
-    <h1>จำนวนผู้ติดเชื้อทั่วโลก</h1>
+    <h3>สถิติข้อมูล COVID 19 ตั้งแต่วันที่ 01/01/2020</h3>
+    <form action="" method="POST" autocomplete="off">
+        <div>
+            Search for :
+            <input type="text" class="form-control" name="tag" id="tag" placeholder="Enter Date" />
+            <input type="submit" value="Search">
+        </div>
+    </form>
 </div>
-<!-- {% for date,confirm in mylist %}
-    <p>{{ date }}</p>
-    <p>{{ confirm }}</p>
- {% endfor %} -->
+<table>
+    <tr>
+
+        <th>DATE</th>
+        <th>CONFIRM</th>
+        <th>RECOVERED</th>
+        <th>HOSPITALIZED</th>
+        <th>DEATHS</th>
+    </tr>
+
+    {% for date,confirm, recovered,hospitalized,deaths in mylist %}
+    <tr>
+        <td>{{ date }}</td>
+        <td>{{ confirm }}</td>
+        <td>{{ recovered }}</td>
+        <td>{{ hospitalized }}</td>
+        <td>{{ deaths }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
 {% endblock %}
