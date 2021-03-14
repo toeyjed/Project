@@ -4,6 +4,7 @@
 
 <div class="head">
     <h1>จำนวนผู้ติดเชื้อทั้งหมดในประเทศไทย</h1>
+    <h6>อัพเดตล่าสุด : {{ covid.UpdateDate }}</h6>
 </div>
 
 <div class="covid">
@@ -16,13 +17,14 @@
         <div class="content di ">เสียชีวิต<br>{{ covid.Died }}</div>
     </div>
 </div>
-<!-- <div class="head">
-    <h2>กราฟแสดงผู้ติดเชื้อสะสมรายวัน</h2>
+<div class="box">
+    <div>
+
+    </div>
 </div>
-<div class="praphs" id="div-id">
-    <script>
-        var graphs = {{ plot | safe}};
-        Plotly.plot('div-id', graphs, {});
-    </script>
-</div> -->
+<div class="box1">
+    <div>
+
+    </div>
+</div>
 {% endblock %}

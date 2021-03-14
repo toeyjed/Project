@@ -21,15 +21,17 @@ def covid():
     covid = {'cases': response['Confirmed'],
              'Recovered': response['Recovered'],
              'Hospitalized': response['Hospitalized'],
-             'Died': response['Deaths']
+             'Died': response['Deaths'],
+             'UpdateDate': response['UpdateDate']
              }
     return render_template('covid19.html', covid=covid, user=current_user)
 
 
 @main.route('/news')
 def news():
+    
 
-    return render_template('news.html', user=current_user)
+    return render_template('news.html',  user=current_user)
 
 
 @main.route('/world')
