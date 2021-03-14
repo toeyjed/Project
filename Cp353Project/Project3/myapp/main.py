@@ -29,14 +29,44 @@ def covid():
 
 @main.route('/news')
 def news():
-    
+    URL = "http://api.mediastack.com/v1/news?access_key=995688a6b0fe66cf9ec90d61040e20d7&languages=en&keywords=-covid"
+    response = requests.get(URL).json()
+    data = response['data']
+    title=[]
+    description=[]
+    image=[]
+    url=[]
 
-    return render_template('news.html',  user=current_user)
+    for i in range(len(data)):
+        myarticles = data[i]
 
+        title.append(myarticles['title'])
+        description.append(myarticles['description'])
+        image.append(myarticles['image'])
+        url.append(myarticles['url'])
+
+    mylist = zip(title, description, url)
+
+    return render_template('news.html', user=current_user, context = mylist)
 
 @main.route('/world')
 def world():
-    return render_template('covidworld.html', user=current_user)
+    url = f"https://api.covid19api.com/summary"
+    data = urlopen(url).read()
+    parsed = json.loads(data)
+    Global = None
+    if parsed.get('Global'):
+
+        confirm = parsed['Global']['TotalConfirmed']
+        recover = parsed['Global']['TotalRecovered']
+        die = parsed['Global']['TotalDeaths']
+        
+
+        Global = {'confirm': confirm,
+                'recover': recover,
+                'die' : die
+                }
+    return render_template('covidworld.html', Global=Global, user=current_user)
 
 
 @main.route('/date')

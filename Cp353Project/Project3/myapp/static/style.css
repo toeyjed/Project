@@ -181,7 +181,6 @@ li p {
 
 .lnr{
     font-family: Linearicons-Free;
-    speak: none;
     font-style: normal;
     font-weight: 400;
     font-variant: normal;
@@ -268,6 +267,9 @@ tr{
 .row{
     text-align: center;
 }
+.rowh{
+    width:33%;
+}
 .table h1{
     text-align: center;
     font-size: 60px;
@@ -276,6 +278,7 @@ tr{
     display: block;
     
 }
+
 .box{
     width: 100%;
     height: 400px;
@@ -285,4 +288,41 @@ tr{
     width: 100%;
     height: 400px;
     background: rgb(255, 255, 255);
+}
+
+.content-news{
+    width: 80%;
+    height: 50%;
+    margin: 1rem auto;
+    background:  rgb(90, 81, 87);
+    border-radius: 7px;
+    padding: 1.2rem;
+}
+.content-news h2{
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    border-bottom: 3px solid #F3E1D5;
+}
+.content-news h3{
+
+    overflow: hidden;
+    margin-top: .4rem;
+    color: white;
+    font-size: 19px;
+}
+.content-news a{
+    padding: .5rem .3rem;
+    background: white;
+    color: #000;
+    margin-top: 1rem;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: .5s ease;
+    line-height: 5;
+}
+.content-news a:hover{
+    background: #B5CCBD;
+    color: #fff;
+
 }
