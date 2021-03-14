@@ -24,7 +24,17 @@ def covid():
              'Died': response['Deaths'],
              'UpdateDate': response['UpdateDate']
              }
-    return render_template('covid19.html', covid=covid, user=current_user)
+
+    URLPR = "https://covid19.th-stat.com/api/open/cases/sum"
+    datapr = requests.get(URLPR).json()
+    datapr = datapr['Province']
+    province = []
+    num = []
+    for key in datapr:
+        province.append(key)
+        num.append(datapr[key])
+    myprovince = zip(province,num)
+    return render_template('covid19.html', covid=covid,myprovince=myprovince, user=current_user)
 
 
 @main.route('/news')
@@ -47,11 +57,12 @@ def news():
 
     mylist = zip(title, description, url)
 
+
     return render_template('news.html', user=current_user, context = mylist)
 
 @main.route('/world')
 def world():
-    url = f"https://api.covid19api.com/summary"
+    url = "https://api.covid19api.com/summary"
     data = urlopen(url).read()
     parsed = json.loads(data)
     Global = None
@@ -61,13 +72,12 @@ def world():
         recover = parsed['Global']['TotalRecovered']
         die = parsed['Global']['TotalDeaths']
         
-
         Global = {'confirm': confirm,
                 'recover': recover,
                 'die' : die
                 }
-    return render_template('covidworld.html', Global=Global, user=current_user)
 
+    return render_template('covidworld.html', Global=Global, user=current_user)
 
 @main.route('/date')
 def covid_date():
@@ -106,31 +116,3 @@ def covid_date():
     
     return render_template('covid_date.html', mylist=mylist, user=current_user)
 
-
-@ main.route('/plot')
-def graph():
-    URL = "https://covid19.th-stat.com/api/open/timeline"
-    response = requests.get(URL).json()
-    data = response['Data']
-    date = []
-    confirm = []
-
-    for i in range(200, 400):
-        data_date = data[i]
-        date.append(data_date['Date'])
-        confirm.append(data_date['Confirmed'])
-
-    fig = go.Figure([
-        go.Scatter(
-            name='revenue',
-            x=date,
-            y=confirm,
-
-            mode='lines',
-            marker=dict(color='red', size=2),
-            showlegend=True
-        )
-    ])
-
-    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    return render_template('graph.html', plot=graphJSON, user=current_user)
