@@ -1,9 +1,22 @@
 {% extends "baselayout/base.html" %}
 
 {% block content %}
+
 <div class="head">
     <h1>NEWS</h1>
 </div>
 
 
-{% endblock %}
+{% for title, description, url in context %}
+<div class="content-news">
+    <h2>News : {{title}} </h2>
+    <h3>Description : {{description}} </h3> <br><br><br>
+    <a href="{{url}}">Read more</a><br>
+    <!--
+    <img src="{{image}}" alt="" width="100px" height="100px">
+    -->
+    
+</div>
+{% endfor %}
+
+{% endblock %}   
