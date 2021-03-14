@@ -25,16 +25,8 @@ def covid():
              'UpdateDate': response['UpdateDate']
              }
 
-    URLPR = "https://covid19.th-stat.com/api/open/cases/sum"
-    datapr = requests.get(URLPR).json()
-    datapr = datapr['Province']
-    province = []
-    num = []
-    for key in datapr:
-        province.append(key)
-        num.append(datapr[key])
-    myprovince = zip(province,num)
-    return render_template('covid19.html', covid=covid,myprovince=myprovince, user=current_user)
+
+    return render_template('covid19.html', covid=covid, user=current_user)
 
 
 @main.route('/news')
@@ -116,3 +108,16 @@ def covid_date():
     
     return render_template('covid_date.html', mylist=mylist, user=current_user)
 
+
+@main.route('/province_casesum')
+def province():
+    URLPR = "https://covid19.th-stat.com/api/open/cases/sum"
+    datapr = requests.get(URLPR).json()
+    datapr = datapr['Province']
+    province = []
+    num = []
+    for key in datapr:
+        province.append(key)
+        num.append(datapr[key])
+    myprovince = zip(province,num)
+    return render_template('covid_province.html',myprovince=myprovince, user=current_user)

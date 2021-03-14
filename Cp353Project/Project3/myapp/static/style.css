@@ -17,6 +17,8 @@ ul {
   justify-content: space-between;
   position: fixed;
   width: 100%;
+  z-index: 2048;
+
 }
 li {
   float: right;
@@ -273,6 +275,7 @@ th {
   overflow: visible;
   outline: none;
   border: none;
+  position: relative;
 }
 .contact {
   margin-left: 4px;

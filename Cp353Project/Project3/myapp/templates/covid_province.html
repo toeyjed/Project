@@ -1,0 +1,24 @@
+{% extends "baselayout/base.html" %} 
+{% block content %}
+<div class="space"></div>
+      <div class="head">
+        <h3>จำนวนผู้ติดเชื้อในประเทศไทย</h3>
+        <h5>แยกตามจังหวัด</h5>
+      </div>
+       <table class="tablepr">
+        <tr>
+          <th>จังหวัด</th>
+          <th>ยอดผู้ติดเชื้อ</th>
+        </tr>
+        {% for province,num in myprovince %}
+        <tr>
+          <td>{{ province }}</td>
+          <td>{{ num }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      
+     
+</div>
+
+{% endblock %}
