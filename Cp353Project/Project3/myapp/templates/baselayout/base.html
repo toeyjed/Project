@@ -27,12 +27,17 @@
             </li>
         </div>
         <div class="right">
-            <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            <li><a href="{{ url_for('auth.logout') }}">LOGOUT</a></li>
             <li><a>{{ user.username }}</a></li>
+<<<<<<< HEAD
             <li><a href="{{ url_for('main.province') }}">PROVINCE</a></li>
             <li><a href="{{ url_for('main.covid_date') }}">STATISRICS</a></li>
+=======
+            <li><a href="{{ url_for('main.covid_date') }}">STATISTICS</a></li>
+            <!-- <li><a href="{{ url_for('main.graph') }}">GRAPH</a></li> -->
+>>>>>>> 08cc19303ff1205581bc1417885948fbc4f5ee9e
             <li><a href="{{ url_for('main.news') }}">NEWS</a></li>
-            <li><a href="{{ url_for('main.world') }}">WORLD</a></li>
+            <li><a href="{{ url_for('main.world') }}">COVID19 WORLD</a></li>
             <li><a href="{{ url_for('main.covid') }}">TODAY</a></li>
         </div>
         {% else %}
@@ -45,8 +50,14 @@
             
             <li><a href="{{ url_for('auth.signup') }}">REGISTER</a></li>
             <li><a href="{{ url_for('auth.login') }}">LOGIN</a></li>
+<<<<<<< HEAD
             <li><a href="{{ url_for('main.news') }}">NEWS</a></li>
             <li><a href="{{ url_for('main.world') }}">WORLD</a></li>
+=======
+            <li><a href="{{ url_for('main.covid_date') }}">STATISTICS</a></li>
+            <li><a href="{{ url_for('main.news') }}">NEWS</a></li>
+            <li><a href="{{ url_for('main.world') }}">COVID19 WORLD</a></li>
+>>>>>>> 08cc19303ff1205581bc1417885948fbc4f5ee9e
             <li><a href="{{ url_for('main.covid') }}">TODAY</a></li>
         </div>
         {% endif %}
