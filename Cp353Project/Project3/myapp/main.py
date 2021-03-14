@@ -72,6 +72,7 @@ def world():
     return render_template('covidworld.html', Global=Global, user=current_user)
 
 @main.route('/date')
+@login_required
 def covid_date():
     day = request.args.get('day')
     URL = "https://covid19.th-stat.com/api/open/timeline"
