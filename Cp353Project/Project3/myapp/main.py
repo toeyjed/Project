@@ -132,7 +132,4 @@ def province():
 def index():
     return render_template('index.html', user=current_user)
 
-@main.route('/form')
-def form():
-    return render_template('form.html',user=current_user)
 
