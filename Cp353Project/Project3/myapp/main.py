@@ -63,10 +63,15 @@ def world():
         confirm = parsed['Global']['TotalConfirmed']
         recover = parsed['Global']['TotalRecovered']
         die = parsed['Global']['TotalDeaths']
-        
+        new = parsed['Global']['NewConfirmed']
+        date = parsed['Global']['Date']
+
+
         Global = {'confirm': confirm,
                 'recover': recover,
-                'die' : die
+                'die' : die,
+                'new' : new,
+                'date' : date
                 }
 
     return render_template('covidworld.html', Global=Global, user=current_user)

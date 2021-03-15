@@ -4,11 +4,14 @@
 <div class="space"></div>
 <div class="head">
     <h1>จำนวนผู้ติดเชื้อทั่วโลก</h1>
+    <h6>อัพเดตล่าสุด : {{ Global.date }}</h6>
 </div>
 
     <div class="covid">
         <div class="cases">
-            <h1>ผู้ติดเชื้อสะสม<br>{{ Global.confirm }}</h1>
+            <h1>ผู้ติดเชื้อสะสม<br>{{ Global.confirm }}
+            <p>**เพิ่มขึ้น {{ Global.new }}**</p>
+            </h1>
         </div>
         <div class="recover">
             <div class="content ho">ได้รับการรักษา<br>{{ Global.recover }}</div>
