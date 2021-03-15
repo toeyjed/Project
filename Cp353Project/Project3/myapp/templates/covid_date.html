@@ -10,24 +10,29 @@
         <div>
             Search for :
             <input type="text" class="form-control" name="day" id="day" placeholder="Ex.01/01/2020" />
-            <input type="submit" value="Search">
+            <button class="but"  type="submit" value="Search">Search</button>
         </div>
     </form>
 </div>
-<table>
+
+<table >
     <tr>
-        <th>DATE</th>
-        <th>CONFIRM</th>
-        <th>RECOVERED</th>
-        <th>HOSPITALIZED</th>
-        <th>DEATHS</th>
+        <th>วันที่</th>
+        <th>ยอดผู้ติดเชื้อรายวัน</th>
+        <th>ยอดผู้ติดเชื้อสะสมรายวัน</th>
+        <th>หายแล้ว</th>
+        <th>รักษาอยู่ในรพ.</th>
+        <th>เสียชีวิต</th>
+        <th>เสียชีวิตสะสม</th>
     </tr>
-    {% for date,confirm, recovered,hospitalized,deaths in mylist %}
+    {% for date,newconfirm,confirm, recovered,hospitalized,newdeaths,deaths in mylist %}
     <tr>
         <td>{{ date }}</td>
+        <td>{{ newconfirm }}</td>
         <td>{{ confirm }}</td>
         <td>{{ recovered }}</td>
         <td>{{ hospitalized }}</td>
+        <td>{{ newdeaths }}</td>
         <td>{{ deaths }}</td>
     </tr>
     {% endfor %}

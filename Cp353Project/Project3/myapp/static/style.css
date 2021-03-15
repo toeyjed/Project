@@ -62,23 +62,26 @@ li p {
   text-align: center;
   padding: 10px 0;
   
-}
-
-.cases {
+}.cases {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .cases h1 {
   margin: 10px 0;
-  padding: 70px 320px;
+  padding: 50px 320px;
   background: rgb(90, 81, 87);
   color: white;
   display: inline-block;
   border-radius: 15px;
   text-align: center;
   font-size: 35px;
+}
+.cases p {
+  font-size: 20px;
+  color: #f04c4c;
 }
 .recover {
   width: 100%;
@@ -93,7 +96,7 @@ li p {
   color: white;
   border-radius: 15px;
   width: 250px;
-  height: 170px;
+  height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,13 +145,10 @@ li p {
   background: rgb(255, 255, 255);
 }
 
-th {
-  font-size: 30px;
-}
 .content1{
     color: #333;
-    background:  #fff;
-    padding: 60px;
+    background:  #fff;;
+    padding: 50px;
 }
 .content1 h3{
     font-size: 30px;
@@ -160,7 +160,8 @@ th {
 
 .content2{
     color: #333 ;
-    padding: 60px;
+    padding: 40px;
+    margin-top: 10px;
     
 }
 .content2 h3{
@@ -174,7 +175,7 @@ th {
 .content3{
     color:  #333;
     background: #fff;
-    padding: 60px;
+    padding: 60px ;
 }
 .content3 h3{
     font-size: 30px;
@@ -321,12 +322,16 @@ th {
   text-align: center !important;
   font-weight: 400;
 }
-table {
-  width: 100%;
+ table {
   height: 500px;
-  margin: 40px 150px 90px 0px;
+  margin: auto;
+  width: 70%;
 }
-
+th{
+  font-size: 20px;
+  background:rgb(241, 178, 61);
+  padding: 15px;
+}
 .image {
   width: 80%;
   height: 500px;
@@ -334,6 +339,10 @@ table {
 }
 tr {
   text-align: center;
+}
+td{
+  border-bottom: 1px solid #ddd;
+  text-transform: uppercase;
 }
 .row {
   text-align: center;
@@ -381,4 +390,91 @@ tr {
 .content-news a:hover {
   background: #b5ccbd;
   color: #fff;
+}
+
+.form-control{
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+.but{
+  background-color:rgb(36, 33, 63);
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.but1{
+  background-color :rgb(84, 175, 130);
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
+}
+.but1 a{
+  
+  color: #fff;
+}
+
+.about{
+  width: 100%;
+}
+.about th{
+  background:#fff;
+}
+.aboutpage{
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+.container-assesment {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: linear-gradient(-135deg, rgb(84, 175, 130), #f1e360);
+}
+.wrap-assesment {
+  width: 70%;
+  height: 100%;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  display: block;
+  padding-left: 50px;
+  padding-top: 77px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+}
+.question{
+  font-size: 20px;
+}
+.radio{
+  display: block;
+  padding: 10px;
+  text-align: center;
+  
+}
+.radio-inline{
+  display: inline-block;
+  font-size: 20px;
+  margin: 0px 50px 8px;
 }

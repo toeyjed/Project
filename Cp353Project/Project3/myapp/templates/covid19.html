@@ -1,82 +1,25 @@
-{% extends "baselayout/base.html" %} 
-{% block content %}
+{% extends "baselayout/base.html" %} {% block content %}
 <div class="space"></div>
 <div class="head">
   <h1>จำนวนผู้ติดเชื้อทั้งหมดในประเทศไทย</h1>
   <h6>อัพเดตล่าสุด : {{ covid.UpdateDate }}</h6>
 </div>
-
 <div class="covid">
-  <div class="cases">
-    <h1>ผู้ติดเชื้อสะสม<br />{{ covid.cases }}</h1>
-  </div>
-  <div class="recover">
-    <div class="content re">หายแล้ว<br />{{ covid.Recovered }}</div>
-    <div class="content ho">กำลังรักษา<br />{{ covid.Hospitalized }}</div>
-    <div class="content di">เสียชีวิต<br />{{ covid.Died }}</div>
+  <div>
+    <div class="cases">
+      <h1>
+        ผู้ติดเชื้อสะสม
+        <br />
+        {{ covid.cases }}
+        <p>**เพิ่มขึ้น {{ covid.NewConfirm }}**</p>
+      </h1>
+    </div>
+    <div class="recover">
+      <div class="content re">หายแล้ว<br />{{ covid.Recovered }}</div>
+      <div class="content ho">กำลังรักษา<br />{{ covid.Hospitalized }}</div>
+      <div class="content di">เสียชีวิต<br />{{ covid.Died }}</div>
+    </div>
   </div>
 </div>
 
-<div class="content">
-  <aside class="sidebar">
-    <!--<div class="headh3">
-      <h3>จำนวนผู้ติดเชื้อในประเทศไทย</h3>
-      <h5>แยกตามจังหวัด</h5>
-    </div>
-     <table class="tablepr">
-      <tr>
-        <th>จังหวัด</th>
-        <th>ยอดผู้ติดเชื้อ</th>
-      </tr>
-      {% for province,num in myprovince %}
-      <tr>
-        <td>{{ province }}</td>
-        <td>{{ num }}</td>
-      </tr>
-      {% endfor %}
-    </table> -->
-    <div class="content1">
-      <h3>อาการทั่วไปมีดังนี้</h3>
-      <p>มีไข้</p>
-      <p>ไอแห้ง</p>
-      <p>อ่อนเพลีย</p>
-      <br>
-    </div>
-    <div class="content3">
-      <h3>วิธีป้องกันการแพร่ระบาดของโควิด-19</h3>
-      <p>
-        ล้างมือบ่อยๆ โดยใช้สบู่และน้ำ
-        หรือเจลล้างมือที่มีส่วนผสมหลักเป็นแอลกอฮอล์
-      </p>
-      <p>รักษาระยะห่างที่ปลอดภัยจากผู้ที่ไอหรือจาม</p>
-      <p>หน้ากากอนามัยเมื่อเว้นระยะห่างไม่ได้</p>
-      <p>ไม่สัมผัสตา จมูก หรือปาก</p>
-      <p>ปิดจมูกและปากด้วยข้อพับด้านในข้อศอกหรือกระดาษชำระเมื่อไอหรือจาม</p>
-      <p>เก็บตัวอยู่บ้านเมื่อรู้สึกไม่สบาย</p>
-      <p>หากมีไข้ ไอ และหายใจลำบากโปรดไปพบแพทย์</p>
-    </div>
-  </aside>
-  <section class="main">
-    <div class="headmain">
-      <div class="content2">
-        <h3>อาการที่พบไม่บ่อยนักมีดังนี้</h3>
-        <p>ปวดเมื่อยเนื้อตัว</p>
-        <p>เจ็บคอ</p>
-        <p>ท้องเสีย</p>
-        <p>ตาแดง</p>
-        <p>ปวดศีรษะ</p>
-        <p>สูญเสียความสามารถในการดมกลิ่นและรับรส</p>
-        <p>มีผื่นบนผิวหนัง หรือนิ้วมือนิ้วเท้าเปลี่ยนสี</p>
-        <p>อาการรุนแรงมีดังนี้</p>
-        <p>หายใจลำบากหรือหายใจถี่</p>
-        <p>เจ็บหน้าอกหรือแน่นหน้าอก</p>
-        <p>สูญเสียความสามารถในการพูดและเคลื่อนไหว</p>
-        <p>
-          *** โดยเฉลี่ยแล้วผู้ที่ติดเชื้อไวรัสจะแสดงอาการป่วยใน 5-6 วัน
-          อย่างไรก็ตาม ผู้ป่วยอาจใช้เวลานานถึง 14 วันจึงจะแสดงอาการ
-        </p>
-      </div>
-    </div>
-  </section>
-</div>
 {% endblock %}

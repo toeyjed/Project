@@ -22,9 +22,9 @@ def covid():
              'Recovered': response['Recovered'],
              'Hospitalized': response['Hospitalized'],
              'Died': response['Deaths'],
-             'UpdateDate': response['UpdateDate']
+             'UpdateDate': response['UpdateDate'],
+             'NewConfirm':response['NewConfirmed']
              }
-
 
     return render_template('covid19.html', covid=covid, user=current_user)
 
@@ -79,20 +79,24 @@ def covid_date():
     response = requests.get(URL).json()
     data = response['Data']
     date = []
+    newconfirm = []
     confirm = []
     recovered = []
     hospitalized = []
+    newdeaths = []
     deaths = []
     if day:
         for i in range(len(data)):
             ck_data = data[i]
             if ck_data['Date'] == day:
                 date.append(ck_data['Date'])
+                newconfirm.append(ck_data['NewConfirmed'])
                 confirm.append(ck_data['Confirmed'])
-                recovered.append(ck_data['Recovered'])
+                recovered.append(ck_data['NewRecovered'])
                 hospitalized.append(ck_data['Hospitalized'])
+                newdeaths.append(ck_data['NewDeaths'])
                 deaths.append(ck_data['Deaths'])
-                mylist = zip(date, confirm, recovered, hospitalized, deaths)
+                mylist = zip(date, newconfirm,confirm, recovered, hospitalized, newdeaths,deaths)
             else:
                 continue
     if not day:
@@ -100,13 +104,14 @@ def covid_date():
         for i in range(len(data)):
             data_date = data[i]
             date.append(data_date['Date'])
+            newconfirm.append(data_date['NewConfirmed'])
             confirm.append(data_date['Confirmed'])
-            recovered.append(data_date['Recovered'])
+            recovered.append(data_date['NewRecovered'])
             hospitalized.append(data_date['Hospitalized'])
+            newdeaths.append(data_date['NewDeaths'])
             deaths.append(data_date['Deaths'])
-            mylist = zip(date, confirm, recovered, hospitalized, deaths)
-
-    
+            mylist = zip(date, newconfirm,confirm, recovered, hospitalized,newdeaths, deaths)
+ 
     return render_template('covid_date.html', mylist=mylist, user=current_user)
 
 
@@ -122,3 +127,12 @@ def province():
         num.append(datapr[key])
     myprovince = zip(province,num)
     return render_template('covid_province.html',myprovince=myprovince, user=current_user)
+
+@main.route('/covid19')
+def index():
+    return render_template('index.html', user=current_user)
+
+@main.route('/form')
+def form():
+    return render_template('form.html',user=current_user)
+
