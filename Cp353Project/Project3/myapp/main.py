@@ -132,4 +132,37 @@ def province():
 def index():
     return render_template('index.html', user=current_user)
 
+@main.route('/form', methods=['GET','POST'])
+def form():
+    result=''
+    if request.method=='POST':
+        question1 = float(request.form.get('q1'))
+        question2 = float(request.form.get('q2'))
+        question3 = float(request.form.get('q3'))
+        question4 = float(request.form.get('q4'))
+        question5 = float(request.form.get('q5'))
+        question6 = float(request.form.get('q6'))
+        question7 = float(request.form.get('q7'))
+        question8 = float(request.form.get('q8'))
+        question9 = float(request.form.get('q9'))
+        question10 = float(request.form.get('q10'))
+        result = question1+question2+question3+question4+question5+question6+question7+question8+question9+question10
+        if result >=  31.0:
+            text ='ท่านมีความเสี่ยงในการติดเชื้อ CORONA VIRUS 2019'
+            text1 ='*หากมีอาการหอบเหนื่อย หายใจไม่ทัน พูดไม่เป็นคำ โทรเรียกรถฉุกเฉิน 1669'
+            return render_template('formresult.html',result=result,text=text,text1=text1, user=current_user)
+        else :
+            text = 'คุณมีความเสี่ยงน้อย'
+            text1 ='วิธีปฎิบัติตัวในช่วงของการระบาด COVID-19'
+            text2='1. หมั่นล้างมือให้สะอาดด้วยสบู่หรือแอลกอฮอล์เจล'
+            text3='2. หลีกเลี่ยงการสัมผัสผู้ที่มีอาการคล้ายไข้หวัด หรือหลีกเลี่ยงการไปที่มีฝูงชน'
+            text4='3. ปรุงอาหารประเภทเนื้อสัตว์และไข่ให้สุกด้วยความร้อน'
+            text5='4. ให้ผ้าปิดปากหรือจมูก เพื่อป้องกันการได้รับเชื้อโรค'
 
+            return render_template('formresult.html', result=result,text=text,text1=text1,text2=text2,text3=text3,text4=text4,text5=text5, user=current_user)
+    
+    return render_template('form.html',result=result, user=current_user)
+
+
+# 'ท่านมีความเสี่ยงในการติดเชื้อ CORONA VIRUS 2019'
+# 'คุณมีความเสี่ยงน้อย'

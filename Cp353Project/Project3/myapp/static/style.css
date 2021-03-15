@@ -426,7 +426,6 @@ td{
   width: 100%;
 }
 .but1 a{
-  
   color: #fff;
 }
 
@@ -449,7 +448,7 @@ td{
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: linear-gradient(-135deg, rgb(84, 175, 130), #f1e360);
+  background: linear-gradient(-135deg, rgb(84, 175, 130), #4158d0);
 }
 .wrap-assesment {
   width: 70%;
@@ -464,17 +463,21 @@ td{
   padding-bottom: 30px;
   box-sizing: border-box;
 }
-.question{
-  font-size: 20px;
+.header{
+  margin: auto;
+  width: 70%;
+  margin: auto;
+  background: rgb(247, 238, 120);
+  height: 100%;
+  padding: 50px;
+  margin-top: 200px;
+  margin-bottom: 300px; 
 }
-.radio{
-  display: block;
-  padding: 10px;
+.header p{
   text-align: center;
-  
-}
-.radio-inline{
-  display: inline-block;
   font-size: 20px;
-  margin: 0px 50px 8px;
+}
+.header h5{
+  text-align: center;
+  font-size: 30px;
 }
