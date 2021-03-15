@@ -49,7 +49,6 @@ def news():
 
     mylist = zip(title, description, url)
 
-
     return render_template('news.html', user=current_user, context = mylist)
 
 @main.route('/world')
